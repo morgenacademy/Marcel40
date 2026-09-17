@@ -505,12 +505,15 @@
     {n:"3", label:"Lunch · Hotel Geerts", name:"Hotel Geerts (Westerlo)", addr:"Grote Markt 50, 2260 Westerlo", lat:51.0874, lng:4.9188, alt:false},
     {n:"4", label:"Museum to Scale 1/7", name:"Museum to Scale (UAntwerpen)", addr:"Rodestraat 14, 2000 Antwerpen", lat:51.2229, lng:4.4065, alt:false},
     {n:"5", label:"MAS-dakterras", name:"MAS (dakterras)", addr:"Hanzestedenplaats 1, 2000 Antwerpen", lat:51.2289, lng:4.4047, alt:false},
-    {n:"6", label:"Café Ernst · te voet vanaf het MAS", name:"Café Ernst (Antwerpen)", addr:"Ernest Van Dijckkaai 18, 2000 Antwerpen", lat:51.2204, lng:4.3969, alt:true},
+    {n:"6", label:"Café Ernst · te voet vanaf het MAS", name:"Café Ernst (Antwerpen)", addr:"Ernest Van Dijckkaai 18, 2000 Antwerpen", lat:51.2204, lng:4.3969, alt:true, mode:"walking", from:"Hanzestedenplaats 1, 2000 Antwerpen"},
     {n:"F", label:"Slot · Station Breda", name:"Station Breda", addr:"Stationsplein 16, 4811 CB Breda", lat:51.5952, lng:4.7799, alt:false}
   ];
 
-  function navUrl(addr){
-    return "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + encodeURIComponent(addr);
+  function navUrl(addr, mode, from){
+    var u = "https://www.google.com/maps/dir/?api=1&travelmode=" + (mode || "driving")
+          + "&destination=" + encodeURIComponent(addr);
+    if(from){ u += "&origin=" + encodeURIComponent(from); }
+    return u;
   }
 
   (function(){
@@ -528,7 +531,8 @@
     stops.forEach(function(s){
       html += '<div class="addr-row"><div class="addr-num' + (s.alt ? ' alt' : '') + '">' + s.n + '</div>'
         + '<div class="addr-txt"><div class="n">' + s.name + '</div><div class="a">' + s.addr + '</div></div>'
-        + '<a class="addr-nav" target="_blank" rel="noopener" href="' + navUrl(s.addr) + '">Navigeer &rsaquo;</a></div>';
+        + '<a class="addr-nav" target="_blank" rel="noopener" href="' + navUrl(s.addr, s.mode, s.from)
+        + '">' + (s.mode === "walking" ? "Lopen" : "Navigeer") + ' &rsaquo;</a></div>';
     });
     document.getElementById("addrlist").innerHTML = html;
   })();
