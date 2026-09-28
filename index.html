@@ -242,6 +242,26 @@
     <div class="timeline">
 
       <div class="stop">
+        <div class="rail"><div class="time">08:00</div><div class="dur">vertrek</div></div>
+        <div class="body-col"><span class="dot">V</span>
+          <div class="card">
+            <span class="tag start">Vertrek</span>
+            <h3>Vertrek uit Den Bosch</h3>
+            <p class="place">Vughterstraat 130, 5211 GM 's-Hertogenbosch</p>
+            <p>Om 08:00 rijden we weg. Het is ± 1,5 uur naar Bilzen, dus rond 09:30 zijn we bij het vliegtuig,
+            met een kwartier speling voor ochtendfile.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop drive">
+        <div class="rail"></div>
+        <div class="body-col"><span class="dot"></span>
+          <div class="drive-line">&#128663; rijden naar de Airbnb in Bilzen · ± 1,5 uur</div>
+        </div>
+      </div>
+
+      <div class="stop">
         <div class="rail"><div class="time">09:45</div><div class="dur">klaar 09:30</div></div>
         <div class="body-col"><span class="dot">S</span>
           <div class="card">
@@ -414,7 +434,7 @@
             <h3>Trein &amp; naar huis</h3>
             <p class="place">Station Breda, Stationsplein 16, 4811 CB Breda</p>
             <p>Marcel &amp; Alex pakken rond 22:30 de trein naar Rotterdam (de precieze tijd kijken we op de dag zelf),
-            wij rijden door naar Den Bosch (± 45 min, thuis rond 22:45). Een leuke 24 uur plus achter de rug, en ze
+            wij rijden terug naar de Vughterstraat in Den Bosch (± 45 min, thuis rond 22:45). Een leuke 24 uur plus achter de rug, en ze
             zijn nog eens ergens geweest. Precies de bedoeling.</p>
           </div>
         </div>
@@ -427,7 +447,7 @@
       <div class="addr-row">
         <div class="addr-num">A</div>
         <div class="addr-txt"><div class="n">Café Ernst · favoriet</div>
-        <div class="a">Ernest Van Dijckkaai 18, 2000 Antwerpen · natuurwijn, craft beer en barfood · vrijdag 15:00&ndash;01:00 · ± 1 km van het museum, te lopen · reserveren via mail of Instagram</div></div>
+        <div class="a">Ernest Van Dijckkaai 18, 2000 Antwerpen · natuurwijn, craft beer en barfood · vrijdag 15:00&ndash;01:00 · ± 1 km van het MAS, te lopen · reserveren niet nodig</div></div>
         <a class="addr-nav" target="_blank" rel="noopener" href="https://www.cafeernstantwerp.be">Bekijk &rsaquo;</a>
       </div>
       <div class="addr-row">
@@ -469,7 +489,8 @@
         <li><span class="who harmen">Harmen</span>Bedenken wat Marcel &amp; Alex donderdagavond eten: pizza laten bezorgen (slecht weer) of uit eten (ze hebben 2 fietsen). Weersafhankelijk, later bepalen.</li>
         <li class="done"><span class="who">wij</span>Lunch geregeld: <b>Nic's in Tielt-Winge, 13:00</b>.</li>
         <li><span class="who">wij</span>Marleen vragen om om 13:00 aan te sluiten voor de lunch bij Nic's (Glabbeeksesteenweg 32, Tielt-Winge).</li>
-        <li><span class="who">wij</span>Café Ernst vragen of Fransje mee naar binnen mag, en laten weten dat we rond 19:00 met 5 personen komen (via mail of Instagram).</li>
+        <li class="done"><span class="who">wij</span>Café Ernst: rond 19:00 met 5 personen, reserveren is niet nodig.</li>
+        <li><span class="who">wij</span>Café Ernst vragen of Fransje mee naar binnen mag (via mail of Instagram).</li>
         <li><span class="who">wij</span>Spéciale Belge Taproom dezelfde hondenvraag stellen, als achtervang voor het geval Fransje bij Ernst niet naar binnen mag. Reserveren hoeft daar niet: dat kan pas vanaf 8 personen, met 5 is er bijna altijd plek.</li>
         <li class="done"><span class="who">wij</span>Treintijden Breda &rarr; Rotterdam: ongeveer 22:30, de precieze tijd bekijken we op de dag zelf.</li>
         <li class="done"><span class="who">wij</span>Museum to Scale is doordeweeks open tot 20:00 &mdash; wij houden 16:45 tot 18:00 aan.</li>
@@ -483,6 +504,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
   var stops = [
+    {n:"V", label:"Vertrek · Den Bosch", name:"Vertrek Den Bosch", addr:"Vughterstraat 130, 5211 GM 's-Hertogenbosch", lat:51.6863, lng:5.2989, alt:false},
     {n:"S", label:"Start · Airbnb (vliegtuig)", name:"Airbnb Bilzen", addr:"Wolfsbergstraat 10, 3740 Bilzen", lat:50.8968, lng:5.5046, alt:false},
     {n:"1", label:"Toren van Eben-Ezer", name:"Toren van Eben-Ezer", addr:"Croquê Thier 15, 4690 Bassenge", lat:50.77617, lng:5.64947, alt:false},
     {n:"2", label:"Lunch · Nic's · laden", name:"Nic's (Tielt-Winge) · &#9889; laden", addr:"Glabbeeksesteenweg 32, 3390 Tielt-Winge", lat:50.9052, lng:4.8852, alt:false},
